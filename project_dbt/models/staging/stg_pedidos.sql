@@ -13,5 +13,5 @@ select
 from source
 
 {% if is_incremental() %}
-    where data_pedido >= (select max(data_pedido) from {{ this }})
+    WHERE data_pedido >= (select max(data_pedido) from {{ this }})
 {% endif %}
